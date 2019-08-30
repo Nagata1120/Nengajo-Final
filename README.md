@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+*(C) Nagata Daiki , Konishi Keisuke , Nonami Kousuke , Moriya Shogo , Kishino Keita
