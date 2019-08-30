@@ -23,4 +23,4 @@ Things you may want to cover:
 
 * ...
 
-*(C) Nagata Daiki , Konishi Keisuke , Nonami Kousuke , Moriya Shogo , Kishino Keita
+*(C) Nagata Daiki , Konishi Keisuke , Nonami Kosuke , Moriya Shogo , Kishino Keita
