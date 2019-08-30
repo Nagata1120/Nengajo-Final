@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Recipients Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Recipient</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recipients_users.each do |recipients_user| %>
+      <tr>
+        <td><%= recipients_user.recipient_id %></td>
+        <td><%= recipients_user.user_id %></td>
+        <td><%= link_to 'Show', recipients_user %></td>
+        <td><%= link_to 'Edit', edit_recipients_user_path(recipients_user) %></td>
+        <td><%= link_to 'Destroy', recipients_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Recipients User', new_recipients_user_path %>

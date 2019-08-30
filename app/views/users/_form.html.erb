@@ -1,0 +1,49 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+
+
+      <h2><%= pluralize(user.errors.count, "個のエラー") %> が発生しました:</h2>
+
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :ユーザ名 %>
+    <%= form.text_field :username %>
+  </div>
+
+  <div class="field">
+    <%= form.label :パスワード %>
+    <%= form.password_field :password %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :氏名 %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :部署 %>
+    <%= form.text_field :busho %>
+  </div>
+
+  <div class="field">
+    <%= form.label :権限 %>
+    <%= form.check_box :admin %>
+  </div>
+  <div class="actions">
+    <%= form.submit:保存 %>
+  </div>
+
+  
+
+  
+<% end %>

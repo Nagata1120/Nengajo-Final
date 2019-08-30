@@ -1,0 +1,45 @@
+﻿<p id="notice"><%= notice %></p>
+<h1>ユーザ一覧</h1>
+
+<%= search_form_for @search do |f| %>
+  <div class="form-group">
+    <%= f.label :name_cont, "氏名を検索" %>
+    <%= f.text_field :name_cont, class: "form-control" %>
+  </div>
+
+  　<%= f.label :権限 %>
+  　<%= f.radio_button :admin_eq, '', {:checked => true} %>指定なし
+    <%= f.radio_button :admin_eq, true %>あり
+    <%= f.radio_button :admin_eq, false %>なし
+    <br><br><%= link_to 'クリア', users_path %>
+    
+  <br><div class="actions"><%= f.submit "検索" %></div>
+
+
+  <% end %>
+
+<table>
+  <thead>
+  　<tr>
+  　<th>氏名</th>
+  　<th><%= sort_link(@q, :admin, "権限") %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.admin ?  "あり" : "なし"%></td>
+
+        <td><%= link_to '詳細', user %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table> 
+
+<br>
+
+<%= link_to '新規ユーザ登録', new_user_path %>
+<%= link_to 'ログアウト', "/login" %>
+<%# :backで前のページに戻るリンクが自動作成される %>

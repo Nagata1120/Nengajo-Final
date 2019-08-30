@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<h1>メニュー</h1>
+
+<h2>ようこそ<%= @user.name %>さん</h2>
+
+  <%= link_to '送付先管理', "/recipients" %>
+  <% @user = User.find(params[:id])%>
+
+　<!-- rubyの構文。後ろの条件を判断して前の操作をする -->
+  <%= link_to 'ユーザ管理', users_path if @user.admin  === true %>
+  
+  
+
+  <%= link_to 'ログアウト', login_path %>

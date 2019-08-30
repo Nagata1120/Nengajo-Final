@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @history.date %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @history.user_id %>
+</p>
+
+<p>
+  <strong>Change:</strong>
+  <%= @history.change %>
+</p>
+
+<p>
+  <strong>Before:</strong>
+  <%= @history.before %>
+</p>
+
+<p>
+  <strong>After:</strong>
+  <%= @history.after %>
+</p>
+
+<p>
+  <strong>Recipient:</strong>
+  <%= @history.recipient_id %>
+</p>
+
+<%= link_to 'Edit', edit_history_path(@history) %> |
+<%= link_to 'Back', histories_path %>

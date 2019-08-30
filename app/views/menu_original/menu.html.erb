@@ -1,0 +1,15 @@
+<%= form_tag("/menu") do %>
+<p id="notice"><%= notice %></p>
+
+<h1>メニュー</h1>
+  <%= link_to '送付先管理', "/recipients" %>
+  <% if @user.admin %>                      <!--adminがtrueならユーザ一覧のリンクが出る-->
+  <%= link_to 'ユーザ管理', "/users" %>
+  <% end %>
+  <%= link_to 'ログアウト', "/login" %>
+
+<% end %>
+<!--
+ログアウトの遷移先は絶対パス？
+ログインページに渡す？
+-->

@@ -1,0 +1,89 @@
+<p id="notice"><%= notice %></p>
+
+<h1>送付先情報</h1>
+
+<p>
+  <strong>氏名:</strong>
+  <%= @recipient.name %>
+</p>
+
+<p>
+  <strong>会社名:</strong>
+  <%= @recipient.shamei %>
+</p>
+
+<p>
+  <strong>部署1:</strong>
+  <%= @recipient.sec_name1 %>
+</p>
+
+<p>
+  <strong>部署2:</strong>
+  <%= @recipient.sec_name2 %>
+</p>
+
+<p>
+  <strong>役職名:</strong>
+  <%= @recipient.position %>
+</p>
+
+<p>
+  <strong>郵便番号:</strong>
+  <%= @recipient.post_code %>
+</p>
+
+<p>
+  <strong>住所1:</strong>
+  <%= @recipient.address1 %>
+</p>
+
+<p>
+  <strong>住所2:</strong>
+  <%= @recipient.address2 %>
+</p>
+
+<p>
+<strong>担当者:</strong>
+  <% @recipientsusers.find_each do |uid|%>
+  <% u = User.find(uid.user_id) %>
+  <%= u.name %>
+  <% end %>
+</p>
+
+<p>
+  <strong>喪中:</strong>
+  <%= @recipient.dolor %>
+</p>
+
+<p>
+  <strong>敬称:</strong>
+</p>
+
+<p>
+  <strong>備考:</strong>
+  <%= @recipient.note %>
+</p>
+
+
+<table>
+  <thead>
+    <tr>  
+      <th>変更履歴</th>
+    </tr>
+  </thead>
+  
+    <tr>
+      <% @histories.find_each do |h| %>
+      <tr><td><%= h.date %></td>
+      <td><%= h.user_id %></td></tr>
+      <br>
+      <% end %>
+  
+    </tr>
+</table>
+
+
+<%= link_to '編集', edit_recipient_path(@recipient) %> |
+<%= link_to '戻る', recipients_path %> |
+<%= link_to '削除', @recipient, method: :delete, data: { confirm: '本当によろしいですか?' } %>
+

@@ -1,0 +1,15 @@
+<h1>ログイン画面</h1>
+
+<%= form_tag("/login") do %>
+ <p>ユーザ名<input name ="username"></p>
+ <p>パスワード<input type="password" name ="password"></p>
+ <p><input type="submit" value="ログイン"></p>
+  
+ <% end %>
+
+<%#
+nameをusernameに変更しなければならない？
+input name ="name"をinput name ="username"に変更
+DBからユーザとパスワードと管理者を判断して管理者ならadmin_page,
+一般ならcommon_pageに移る？
+%>

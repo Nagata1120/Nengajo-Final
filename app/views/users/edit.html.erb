@@ -1,0 +1,10 @@
+<h1>ユーザ情報編集</h1>
+
+<h4>＊パスワードを変更しないときは空欄のまま保存して下さい</h4>
+
+
+
+<%= render 'form', user: @user %>
+
+<%= link_to '詳細', @user %> |
+<%= link_to 'ユーザ一覧へ', users_path  if @user.admin == true  %>

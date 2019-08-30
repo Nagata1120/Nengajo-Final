@@ -1,0 +1,70 @@
+<%= form_with(model: recipient, local: true) do |form| %>
+  <% if recipient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(recipient.errors.count, "error") %> prohibited this recipient from being saved:</h2>
+
+      <ul>
+      <% recipient.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :氏名 %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :会社名 %>
+    <%= form.text_area :shamei %>
+  </div>
+
+  <div class="field">
+    <%= form.label :部署1 %>
+    <%= form.text_field :sec_name1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :部署2 %>
+    <%= form.text_field :sec_name2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :役職名 %>
+    <%= form.text_field :position %>
+  </div>
+
+  <div class="field">
+    <%= form.label :郵便番号 %>
+    <%= form.number_field :post_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :住所1 %>
+    <%= form.text_area :address1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :住所2 %>
+    <%= form.text_area :address2 %>
+  </div>
+
+  <div class="field">
+  </div>
+
+  <div class="field">
+    <%= form.label :喪中 %>
+    <%= form.check_box :dolor%>
+  </div>
+
+  <div class="field">
+    <%= form.label :備考 %>
+    <%= form.text_area :note %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit:保存 %>
+  </div>
+<% end %>
